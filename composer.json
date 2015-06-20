@@ -1,0 +1,68 @@
+{
+  "name": "gglnx/podcasterinnen",
+  "description": "",
+  "keywords": ["wordpress", "grunt", "browsersync"],
+  "homepage": "https://github.com/gglnx/podcasterinnen",
+  "version": "0.1.0",
+  "type": "project",
+  "license": "GPL-2.0",
+  "authors": [
+    {
+      "name": "Dennis Morhardt",
+      "email": "info@dennismorhardt.de",
+      "homepage": "https://www.dennismorhardt.de/"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/gglnx/podcasterinnen/issues"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "http://wpackagist.org"
+    },
+    {
+      "type": "composer",
+      "url": "http://languages.koodimonni.fi"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/mustardBees/cmb_field_map"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.0",
+    "johnpbloch/wordpress": "^4.2.0",
+    "koodimonni-language/de_de": "^4.2.0",
+    "danielbachhuber/dictator": "*",
+    "composer/installers": "~1.0.0",
+    "vlucas/phpdotenv": "^2.0.0",
+    "webdevstudios/cmb2": "^2.0.0",
+    "mustardbees/cmb_field_map": "^2.1",
+    "wpackagist-plugin/posts-to-posts": "^1.6.0",
+    "wpackagist-plugin/wp-post-meta-revisions": "^0.6.0"
+  },
+  "require-dev": {
+    "wpackagist-plugin/codestyling-localization": "*",
+    "wpackagist-plugin/regenerate-thumbnails": "*",
+    "wpackagist-plugin/monkeyman-rewrite-analyzer": "*",
+    "wpackagist-plugin/debug-bar": "*",
+    "psy/psysh": "*"
+  },
+  "suggest": {
+    "wp-cli/wp-cli": "Allows management via cli (e.g. import default settings via dictator.yml)"
+  },
+  "extra": {
+    "installer-paths": {
+      "public/content/plugins/{$name}/": ["type:wordpress-plugin"],
+      "public/content/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+      "public/content/themes/{$name}/": ["type:wordpress-theme"]
+    },
+    "dropin-paths": {
+      "public/content/languages/": ["vendor:koodimonni-language"],
+      "public/content/languages/plugins/": ["vendor:koodimonni-plugin-language"],
+      "public/content/languages/themes/": ["vendor:koodimonni-theme-language"]
+    },
+    "wordpress-install-dir": "public/wordpress"
+  }
+}

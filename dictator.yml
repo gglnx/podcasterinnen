@@ -1,0 +1,26 @@
+state: site
+settings:
+  title: Podcasterinnen
+  description: Verzeichnis deutschsprachiger Podcasts mit Frauenstimmen
+  admin_email: team@podcasterinnen.de
+  timezone: Europe/Berlin
+  date_format: j. F Y
+  time_format: G:i
+  public: true
+  posts_per_page: 10
+  posts_per_feed: 10
+  feed_uses_excerpt: false
+  allow_comments: true
+  allow_pingbacks: true
+  notify_comments: true
+  notify_moderation: true
+  permalink_structure: /blog/%year%/%monthnum%/%day%/%postname%
+  category_base: blog
+  tag_base: blog/tag
+  active_theme: podcasterinnen
+  active_plugins:
+    - cmb2/init.php
+    - cmb_field_map/cmb-field-map.php
+    - posts-to-posts/posts-to-posts.php
+    - super-cpt/super-cpt.php
+    - wp-post-meta-revisions/wp-post-meta-revisions.php
