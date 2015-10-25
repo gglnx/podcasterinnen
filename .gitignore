@@ -39,7 +39,3 @@ logs/*
 
 # Env
 .env
-
-# WordPress
-public/wordpress
-public/content

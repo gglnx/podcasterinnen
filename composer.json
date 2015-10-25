@@ -1,9 +1,6 @@
 {
   "name": "gglnx/podcasterinnen",
-  "description": "",
-  "keywords": ["wordpress", "grunt", "browsersync"],
   "homepage": "https://github.com/gglnx/podcasterinnen",
-  "version": "0.1.0",
   "type": "project",
   "license": "GPL-2.0",
   "authors": [
@@ -13,9 +10,6 @@
       "homepage": "https://www.dennismorhardt.de/"
     }
   ],
-  "support": {
-    "issues": "https://github.com/gglnx/podcasterinnen/issues"
-  },
   "repositories": [
     {
       "type": "composer",
@@ -32,37 +26,33 @@
   ],
   "require": {
     "php": ">=5.5.0",
-    "johnpbloch/wordpress": "^4.2.0",
-    "koodimonni-language/de_de": "^4.2.0",
-    "danielbachhuber/dictator": "*",
+    "johnpbloch/wordpress": "^4.3.0",
+    "koodimonni-language/de_de": "^4.3.0",
     "composer/installers": "~1.0.0",
     "vlucas/phpdotenv": "^2.0.0",
     "webdevstudios/cmb2": "^2.0.0",
-    "mustardbees/cmb_field_map": "^2.1",
+    "mustardbees/cmb_field_map": "^2.1.0",
     "wpackagist-plugin/posts-to-posts": "^1.6.0",
     "wpackagist-plugin/wp-post-meta-revisions": "^0.6.0"
   },
   "require-dev": {
-    "wpackagist-plugin/codestyling-localization": "*",
-    "wpackagist-plugin/regenerate-thumbnails": "*",
-    "wpackagist-plugin/monkeyman-rewrite-analyzer": "*",
-    "wpackagist-plugin/debug-bar": "*",
-    "psy/psysh": "*"
+    "wpackagist-plugin/debug-bar": "*"
   },
   "suggest": {
-    "wp-cli/wp-cli": "Allows management via cli (e.g. import default settings via dictator.yml)"
+    "wp-cli/wp-cli": "Allows management via cli (e.g. import default settings via dictator.yml)",
+    "danielbachhuber/dictator": "Allows to import default settings and handle the state of WordPress"
   },
   "extra": {
     "installer-paths": {
-      "public/content/plugins/{$name}/": ["type:wordpress-plugin"],
-      "public/content/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
-      "public/content/themes/{$name}/": ["type:wordpress-theme"]
+      "content/plugins/{$name}/": ["type:wordpress-plugin"],
+      "content/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+      "content/themes/{$name}/": ["type:wordpress-theme"]
     },
     "dropin-paths": {
-      "public/content/languages/": ["vendor:koodimonni-language"],
-      "public/content/languages/plugins/": ["vendor:koodimonni-plugin-language"],
-      "public/content/languages/themes/": ["vendor:koodimonni-theme-language"]
+      "content/languages/": ["vendor:koodimonni-language"],
+      "content/languages/plugins/": ["vendor:koodimonni-plugin-language"],
+      "content/languages/themes/": ["vendor:koodimonni-theme-language"]
     },
-    "wordpress-install-dir": "public/wordpress"
+    "wordpress-install-dir": "wordpress"
   }
 }

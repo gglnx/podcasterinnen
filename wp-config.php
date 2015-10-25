@@ -7,12 +7,12 @@
  * @licence     MIT
  */
 
+// Absolute path to the project root directory
+define( 'ROOT_ABSPATH', dirname( __FILE__ ) . DIRECTORY_SEPARATOR );
+
 // Absolute path to the WordPress directory
 if ( !defined( 'ABSPATH' ) )
-	define( 'ABSPATH', dirname( __FILE__ ) . DIRECTORY_SEPARATOR );
-
-// Absolute path to the project root directory
-define( 'ROOT_ABSPATH', dirname( __DIR__ ) . DIRECTORY_SEPARATOR );
+	define( 'ABSPATH', ROOT_ABSPATH . 'wordpress' . DIRECTORY_SEPARATOR );
 
 // Include autoloader from composer
 require_once( ROOT_ABSPATH . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php' );
@@ -49,7 +49,7 @@ if ( getenv( 'WPLANG' ) )
 
 // WP CLI fix
 if ( defined( 'WP_CLI' ) )
-	$_SERVER['HTTP_HOST'] = 'localhost:9000';
+	$_SERVER['HTTP_HOST'] = 'localhost:3000';
 
 // Override home & siteurl settings
 define( 'WP_HOME', getenv_fallback( 'WP_HOME', 'http://' . $_SERVER['HTTP_HOST'] ) );
@@ -81,8 +81,9 @@ define( 'WP_CONTENT_DIR', ROOT_ABSPATH . 'public' . DIRECTORY_SEPARATOR . CONTEN
 define( 'WP_CONTENT_URL', WP_HOME . '/' . CONTENT_DIR );
 
 // Load configuration for environment
-if ( file_exists( ROOT_ABSPATH . 'public' . DIRECTORY_SEPARATOR . 'wp-config.' . WP_ENV . '.php' ) )
-	require_once ROOT_ABSPATH . 'public' . DIRECTORY_SEPARATOR . 'wp-config.' . WP_ENV . '.php';
+$_local_configuration = ROOT_ABSPATH . 'config' . DIRECTORY_SEPARATOR . WP_ENV . '.php';
+if ( file_exists( $_local_configuration ) )
+	require_once $_local_configuration;
 
 // Init WordPress
 require_once ABSPATH . 'wp-settings.php';

@@ -17,4 +17,5 @@ require 'inc/admin-ui.php';
 require 'inc/revisions.php';
 
 // Load import function
-require 'inc/import.php';
+if ( defined( 'WP_LOAD_IMPORTERS' ) )
+	require 'inc/import.php';

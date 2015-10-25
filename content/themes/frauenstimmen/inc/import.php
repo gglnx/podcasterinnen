@@ -7,9 +7,6 @@
  * @licence     GPL-2.0
  */
 
-if ( !defined('WP_LOAD_IMPORTERS') )
-	return;
-
 // Load Importer API
 require_once ABSPATH . 'wp-admin/includes/import.php';
 
