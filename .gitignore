@@ -1,23 +1,9 @@
-# Bower
-theme/components
+# Environment settings
+.env
 
-# Composer
+# Package Managers: npm, composer
+node_modules
 vendor
-
-# Node specific
-lib-cov
-*.seed
-*.log
-*.dat
-*.out
-*.pid
-*.gz
-pids
-npm-debug.log
-node_modules/
-
-# Grunt (tmp)
-.tmp
 
 # OS
 .DS_Store
@@ -29,13 +15,12 @@ Icon?
 ehthumbs.db
 Thumbs.db
 
-# Sublime specific #
-sftp-config*
-*.sublime-*
-
-# Log files
-logs/*
-!logs/.gitkeep
-
-# Env
-.env
+# WordPress
+/wordpress
+/content/*
+!/content/plugins/
+/content/plugins/*
+#!/content/plugins/include-plugin-to-git/
+!/content/themes/
+/content/themes/*
+!/content/themes/podcasterinnen/

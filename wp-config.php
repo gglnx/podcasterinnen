@@ -77,7 +77,7 @@ define( 'DISABLE_WP_CRON', true );
 
 // Content directory
 define( 'CONTENT_DIR', 'content' );
-define( 'WP_CONTENT_DIR', ROOT_ABSPATH . 'public' . DIRECTORY_SEPARATOR . CONTENT_DIR );
+define( 'WP_CONTENT_DIR', ROOT_ABSPATH . CONTENT_DIR );
 define( 'WP_CONTENT_URL', WP_HOME . '/' . CONTENT_DIR );
 
 // Load configuration for environment
